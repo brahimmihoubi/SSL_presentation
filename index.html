@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SDG Skills Lab - Event Presentation</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+        :root {
+            --dark-green-bg: #051F20;
+            --medium-dark-green: #0B2B26;
+            --card-green: #163832;
+            --accent-green: #235347;
+            --text-green: #8EB69B;
+            --light-bg: #DAF1DE;
+            --nav-height: 70px; /* Define nav height for calculations */
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--dark-green-bg);
+            color: var(--light-bg);
+            margin: 0;
+            padding: 0;
+            line-height: 1.7;
+        }
+
+        /* --- Updated Navigation Bar Styles --- */
+        .navbar {
+            background-color: var(--medium-dark-green);
+            padding: 0 20px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: var(--nav-height);
+        }
+        
+        .nav-logo img {
+            height: 45px; /* Adjust size of logo in the nav bar */
+            vertical-align: middle;
+        }
+
+        .nav-links {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap; 
+        }
+
+        .nav-links li {
+            border-bottom: none;
+            padding: 0 5px;
+        }
+
+        .nav-links a {
+            color: var(--light-bg);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1em;
+            padding: 10px 15px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            background-color: var(--accent-green);
+        }
+
+        /* --- Main Header Section --- */
+        .main-header {
+            text-align: center;
+            padding: 60px 20px;
+            background-color: var(--light-bg);
+            border-bottom: 4px solid var(--accent-green);
+        }
+
+        .main-header .logo {
+            max-width: 180px;
+            margin-bottom: 20px;
+        }
+
+        .main-header h1 {
+            color: var(--dark-green-bg);
+            font-size: 3em;
+            font-weight: 700;
+            margin: 0;
+        }
+
+        .main-header .slogan {
+            font-size: 1.5em;
+            color: var(--accent-green);
+            font-weight: 400;
+            margin-top: 10px;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .section {
+            background-color: var(--medium-dark-green);
+            margin: 20px 0;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+            /* This prevents the sticky nav from covering section titles on jump */
+            scroll-margin-top: var(--nav-height); 
+        }
+
+        .section h2 {
+            font-size: 2.2em;
+            color: #ffffff;
+            font-weight: 600;
+            border-bottom: 3px solid var(--accent-green);
+            padding-bottom: 10px;
+            margin-top: 0;
+            margin-bottom: 20px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background-color: var(--card-green);
+            padding: 20px;
+            border-radius: 8px;
+        }
+        
+        .card h3 {
+            margin-top: 0;
+            color: var(--text-green);
+            font-size: 1.2em;
+        }
+
+        ul { list-style: none; padding-left: 0; }
+        li { padding: 8px 0; border-bottom: 1px solid var(--accent-green); }
+        li:last-child { border-bottom: none; }
+        li strong { color: var(--text-green); }
+
+        .program-table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+        .program-table th, .program-table td { padding: 12px; text-align: left; border-bottom: 2px solid var(--accent-green); }
+        .program-table th { background-color: var(--accent-green); color: #ffffff; }
+        .program-table td { background-color: var(--card-green); }
+
+        footer { text-align: center; padding: 20px; margin-top: 40px; font-size: 0.9em; color: var(--text-green); }
+        
+        /* Responsive adjustment for nav on smaller screens */
+        @media (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+                height: auto;
+                padding: 10px;
+            }
+            .nav-links {
+                margin-top: 10px;
+                justify-content: center;
+            }
+            .nav-links a {
+                font-size: 0.9em;
+                padding: 8px 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Sticky Navigation Bar at the top -->
+    <nav class="navbar">
+        <a href="#" class="nav-logo">
+            <img src="assets/image/logo.png" alt="SDG Logo">
+        </a>
+        <ul class="nav-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#program">Program</a></li>
+            <li><a href="#speakers">Speakers</a></li>
+            <li><a href="#conclusion">Conclusion</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main Title/Welcome Page -->
+    <header class="main-header">
+        <img src="assets/image/logo.png" alt="SDG Skills Lab Logo" class="logo">
+        <h1>SDG Skills Lab</h1>
+        <p class="slogan">Learn. Build. Impact.</p>
+    </header>
+
+    <div class="container">
+
+        <!-- About the Event Section -->
+        <section class="section" id="about">
+            <h2>About the Event</h2>
+            <p>"SDG Skills Lab" is a dynamic, multi-week educational initiative designed to equip students with practical, high-demand skills through hands-on training. In collaboration with Algérie Télécom and with production support from Rdjem Studio, the series will run over several weeks — each dedicated to a different theme. This program reflects the mission of the Skill Center to bridge the gap between academic learning and real-world application.</p>
+            <div class="grid">
+                <div class="card">
+                    <h3>Key Information</h3>
+                    <ul>
+                        <li><strong>Launch Date:</strong> August 15, 2025</li>
+                        <li><strong>Location:</strong> Skell Center, Sétif</li>
+                        <li><strong>Format:</strong> Weekly in-depth workshops</li>
+                        <li><strong>Audience:</strong> University students</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3>Organizers & Partners</h3>
+                    <ul>
+                        <li><strong>Organized by:</strong> Setif Developers Group (SDG)</li>
+                        <li><strong>Main Partner:</strong> Algérie Télécom</li>
+                        <li><strong>Production Partner:</strong> Rdjem Studio</li>
+                        <li><strong>Partners:</strong> Nasda, GDG</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Program Section -->
+        <section class="section" id="program">
+            <h2>Program</h2>
+            <p>The program is structured around a weekly theme, providing deep dives into critical skill areas. Each week concludes with a mini-project and certification.</p>
+            <div class="grid">
+                <div class="card"><h3>General Format</h3><ul><li>1 or 2 Themes in 1 Week</li><li>5 Days of Workshops</li><li>4 hours of training daily</li><li>Final Day: Mini project & Q&A</li></ul></div>
+                <div class="card"><h3>Each Workshop Includes</h3><ul><li>Real use cases</li><li>Tools walkthrough</li><li>Group projects or tasks</li><li>Certification per theme</li></ul></div>
+            </div>
+
+            <h3 style="margin-top: 30px; color: #ffffff;">Weekly Schedule</h3>
+            <div style="overflow-x:auto;">
+                <table class="program-table">
+                    <thead><tr><th>Week</th><th>Theme</th><th>Partners</th></tr></thead>
+                    <tbody>
+                        <tr><td>1</td><td>Entrepreneurship</td><td>NASDA Organization</td></tr>
+                        <tr><td>2</td><td>UI/UX Design</td><td>Internal Speakers</td></tr>
+                        <tr><td>3</td><td>Web Development</td><td>Internal Speakers</td></tr>
+                        <tr><td>4</td><td>Mobile Development</td><td>Internal Speakers</td></tr>
+                        <tr><td>5</td><td>Cyber Security</td><td>Internal Speakers, Skill Center Lab</td></tr>
+                        <tr><td>6</td><td>Artificial Intelligence</td><td>Internal Experts, GDG</td></tr>
+                        <tr><td>7</td><td>Languages (EN/FR/DE)</td><td>MBI Algeria Campus, Mercia School</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Speakers & Trainers Section -->
+        <section class="section" id="speakers">
+            <h2>Invited Speakers & Trainers</h2>
+            <p>All workshops are managed by our club members as core facilitators, with experts joining for specific sessions or hands-on mentoring.</p>
+            <div class="grid">
+                <div class="card"><h3>Entrepreneurship</h3><p>Experts from tech startups and services in the Sétif region.</p></div>
+                <div class="card"><h3>Development</h3><p>Club members with a strong development background.</p></div>
+                <div class="card"><h3>Cyber Security</h3><p>Local experts and the club cybersecurity team.</p></div>
+                <div class="card"><h3>Artificial Intelligence</h3><p>GDG/ML experts and internal AI enthusiasts.</p></div>
+                <div class="card"><h3>Languages</h3><p>Certified instructors from MBI & Mercia School.</p></div>
+            </div>
+        </section>
+
+        <!-- Conclusion Section -->
+        <section class="section" id="conclusion">
+            <h2>Conclusion</h2>
+            <p>SDG Skill Lab is not just about training — it's about building a generation of students ready to lead, create, and adapt in a changing digital world. By combining technical skills, entrepreneurship, language mastery, and soft skills, this program empowers students to become valuable contributors.</p>
+            <p>With strong partnerships, this initiative is backed by real expertise. Students will walk away with skills, certifications, and confidence to move forward in their careers.</p>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="section" id="contact">
+            <h2>Contact Us</h2>
+            <div class="grid">
+                <div class="card"><h3>SDG President</h3><p><strong>Name:</strong> Mihoubi Brahim<br><strong>Contact:</strong> 0670242636<br><strong>Email:</strong> bmihoubi335@gmail.com</p></div>
+                <div class="card"><h3>Vice President</h3><p><strong>Name:</strong> Bara Achraf Abdelhamid<br><strong>Contact:</strong> 0665074090<br><strong>Email:</strong> Baraachraf690@gmail.com</p></div>
+                <div class="card"><h3>Exterieur Relations Responsible</h3><p><strong>Name:</strong> Belhaoui Ahmed Yacine<br><strong>Contact:</strong> 0660447190<br><strong>Email:</strong> blh.ahmedyacine@gmail.com</p></div>
+            </div>
+        </section>
+
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Setif Developers Group (SDG) - Farhat Abbas University-Setif 1</p>
+    </footer>
+
+</body>
+</html>
