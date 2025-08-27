@@ -151,7 +151,6 @@
                 box-shadow: 0 5px 10px rgba(0,0,0,0.2);
             }
             
-            /* This class is toggled by JavaScript to show the menu */
             .nav-links.active {
                 display: flex;
             }
@@ -165,6 +164,39 @@
                 padding: 15px;
                 display: block;
                 border-top: 1px solid rgba(0,0,0,0.1);
+            }
+
+            /* --- NEW: Responsive Table Styles --- */
+            .program-table {
+                border: 0;
+            }
+            .program-table thead {
+                display: none; /* Hide table headers */
+            }
+            .program-table tr {
+                display: block; /* Make rows stack */
+                margin-bottom: 15px;
+                border-radius: 8px;
+                overflow: hidden;
+                border: 1px solid var(--accent-green);
+            }
+            .program-table td {
+                display: block;
+                text-align: right; /* Align content to the right */
+                border-bottom: 1px solid var(--accent-green);
+                position: relative;
+                padding-left: 50%; /* Make space for the label */
+            }
+            .program-table td:last-child {
+                border-bottom: 0;
+            }
+            .program-table td::before {
+                content: attr(data-label); /* Use the data-label as content */
+                position: absolute;
+                left: 12px;
+                text-align: left;
+                font-weight: bold;
+                color: var(--text-green);
             }
         }
     </style>
@@ -237,22 +269,22 @@
             </div>
 
             <h3 style="margin-top: 30px; color: #ffffff;">Weekly Schedule</h3>
-            <div style="overflow-x:auto;">
+            <div>
                 <table class="program-table">
                     <thead><tr><th>Order</th><th>Sessions</th><th>Theme</th><th>Speakers</th></tr></thead>
                     <tbody>
-                        <tr><td>1</td><td>2 Sessions</td><td>C ++</td><td>Chiheb Abizza</td></tr>
-                        <tr><td>2</td><td>3 Sessions</td><td>Web Development Basics</td><td>Younes Kareem Eddin Roubache</td></tr>
-                        <tr><td>3</td><td>5 Sessions</td><td>Web Development Advanced</td><td>Moatazz Chaaben</td></tr>
-                        <tr><td>4</td><td>5 Sessions</td><td>Mobile Development (Flutter)</td><td>Malek Lamara</td></tr>
-                        <tr><td>5</td><td>2 Sessions</td><td>UI/UX Design</td><td>Ghithe Sofian</td></tr>
-                        <tr><td>6</td><td>3 Sessions</td><td>TRI</td><td>NESDA Constructors</td></tr>
-                        <tr><td>7</td><td>2 Sessions</td><td>Design Thinking</td><td>Safie Zegtof</td></tr>
-                        <tr><td>8</td><td>3 Sessions</td><td>E-commerce</td><td>Ahmed Yacine Belhaoui</td></tr>
-                        <tr><td>9</td><td>2 Sessions</td><td>Closing</td><td>Mohammed Islam Mabrouki</td></tr>
-                        <tr><td>10</td><td>3 Sessions</td><td>Artificial Intelligence</td><td>Skander Hammdi</td></tr>
-                        <tr><td>11</td><td>3 Sessions</td><td>Cyber Security</td><td>Meriem Toumi</td></tr>
-
+                        <!-- HTML UPDATED WITH data-label ATTRIBUTES -->
+                        <tr><td data-label="Order">1</td><td data-label="Sessions">2 Sessions</td><td data-label="Theme">C ++</td><td data-label="Speakers">Chiheb Abizza</td></tr>
+                        <tr><td data-label="Order">2</td><td data-label="Sessions">3 Sessions</td><td data-label="Theme">Web Development Basics</td><td data-label="Speakers">Younes Kareem Eddin Roubache</td></tr>
+                        <tr><td data-label="Order">3</td><td data-label="Sessions">5 Sessions</td><td data-label="Theme">Web Development Advanced</td><td data-label="Speakers">Moatazz Chaaben</td></tr>
+                        <tr><td data-label="Order">4</td><td data-label="Sessions">5 Sessions</td><td data-label="Theme">Mobile Development (Flutter)</td><td data-label="Speakers">Malek Lamara</td></tr>
+                        <tr><td data-label="Order">5</td><td data-label="Sessions">2 Sessions</td><td data-label="Theme">UI/UX Design</td><td data-label="Speakers">Ghithe Sofian</td></tr>
+                        <tr><td data-label="Order">6</td><td data-label="Sessions">3 Sessions</td><td data-label="Theme">TRI</td><td data-label="Speakers">NESDA Constructors</td></tr>
+                        <tr><td data-label="Order">7</td><td data-label="Sessions">2 Sessions</td><td data-label="Theme">Design Thinking</td><td data-label="Speakers">Safie Zegtof</td></tr>
+                        <tr><td data-label="Order">8</td><td data-label="Sessions">3 Sessions</td><td data-label="Theme">E-commerce</td><td data-label="Speakers">Ahmed Yacine Belhaoui</td></tr>
+                        <tr><td data-label="Order">9</td><td data-label="Sessions">2 Sessions</td><td data-label="Theme">Closing</td><td data-label="Speakers">Mohammed Islam Mabrouki</td></tr>
+                        <tr><td data-label="Order">10</td><td data-label="Sessions">3 Sessions</td><td data-label="Theme">Artificial Intelligence</td><td data-label="Speakers">Skander Hammdi</td></tr>
+                        <tr><td data-label="Order">11</td><td data-label="Sessions">3 Sessions</td><td data-label="Theme">Cyber Security</td><td data-label="Speakers">Meriem Toumi</td></tr>
                     </tbody>
                 </table>
             </div>
