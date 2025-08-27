@@ -122,6 +122,12 @@
         .card { background-color: var(--card-green); padding: 20px; border-radius: 8px; }
         .card h3 { margin-top: 0; color: var(--text-green); font-size: 1.2em; }
 
+        /* --- NEW: Style to prevent text overflow --- */
+        .card p {
+            overflow-wrap: break-word; /* Allows long words like emails to wrap */
+            word-wrap: break-word; /* Legacy support */
+        }
+
         ul { list-style: none; padding-left: 0; }
         li { padding: 8px 0; border-bottom: 1px solid var(--accent-green); }
         li:last-child { border-bottom: none; }
@@ -166,7 +172,7 @@
                 border-top: 1px solid rgba(0,0,0,0.1);
             }
 
-            /* --- NEW: Responsive Table Styles --- */
+            /* --- Responsive Table Styles --- */
             .program-table {
                 border: 0;
             }
@@ -273,7 +279,6 @@
                 <table class="program-table">
                     <thead><tr><th>Order</th><th>Sessions</th><th>Theme</th><th>Speakers</th></tr></thead>
                     <tbody>
-                        <!-- HTML UPDATED WITH data-label ATTRIBUTES -->
                         <tr><td data-label="Order">1</td><td data-label="Sessions">2 Sessions</td><td data-label="Theme">C ++</td><td data-label="Speakers">Chiheb Abizza</td></tr>
                         <tr><td data-label="Order">2</td><td data-label="Sessions">3 Sessions</td><td data-label="Theme">Web Development Basics</td><td data-label="Speakers">Younes Kareem Eddin Roubache</td></tr>
                         <tr><td data-label="Order">3</td><td data-label="Sessions">5 Sessions</td><td data-label="Theme">Web Development Advanced</td><td data-label="Speakers">Moatazz Chaaben</td></tr>
