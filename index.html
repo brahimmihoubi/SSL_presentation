@@ -34,12 +34,14 @@
         .main-header {
             text-align: center;
             padding: 60px 20px;
-            background-color: var(--dark-green-bg);
+            /* changed: header uses the page light background for a brighter hero */
+            background-color: var(--light-bg);
             border-bottom: 4px solid var(--accent-green);
         }
 
         .main-header .logo { max-width: 180px; margin-bottom: 20px; }
-        .main-header h1 { color: var(--light-bg); font-size: 3em; font-weight: 700; margin: 0; }
+        /* changed: ensure text contrasts with the new (light) header background */
+        .main-header h1 { color: var(--dark-green-bg); font-size: 3em; font-weight: 700; margin: 0; }
         .main-header .slogan { font-size: 1.5em; color: var(--text-green); font-weight: 400; margin-top: 10px; }
         
         .container { max-width: 1000px; margin: 0 auto; padding: 20px; }
