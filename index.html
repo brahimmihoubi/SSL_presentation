@@ -55,8 +55,18 @@
 
         .section h2 { font-size: 2.2em; color: #ffffff; font-weight: 600; border-bottom: 3px solid var(--accent-green); padding-bottom: 10px; margin-top: 0; margin-bottom: 20px; }
         .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
-        .card { background-color: var(--card-green); padding: 20px; border-radius: 8px; }
-        .card h3 { margin-top: 0; color: var(--text-green); font-size: 1.2em; }
+        .card {
+            /* match card background to the page body background and text color to body color */
+            background-color: var(--light-bg);
+            color: var(--dark-green-bg);
+            padding: 20px;
+            border-radius: 8px;
+        }
+        .card h3 {
+            margin-top: 0;
+            color: inherit; /* use the same text color as the card */
+            font-size: 1.2em;
+        }
 
         /* --- NEW: Style to prevent text overflow --- */
         .card p {
